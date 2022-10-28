@@ -32,11 +32,11 @@ control = true;
     
     this.control = !this.control;
     
-    if(this.nameButton == "Todas Imagens"){ 
-    this.nameButton ="Fotos pares";
+    if(this.nameButton == "Fotos pares"){ 
+    this.nameButton ="Todas Imagens";
    
     }else{
-    this.nameButton ="Todas Imagens";
+    this.nameButton ="Fotos pares";
     }
   }
 }

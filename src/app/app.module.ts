@@ -4,25 +4,21 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { FotoComponent } from './foto/foto.component';
-
-import { HeaderComponent } from './header/header.component';
-import { InicioComponent } from './inicio/inicio.component';
-import { FormularioComponent } from './formulario/formulario.component';
-
+import { FotografiaModule } from './fotografia/fotografia.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FotoComponent,
-    HeaderComponent,
-    InicioComponent,
-    FormularioComponent,
   ],
+
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FotografiaModule,
+    SharedModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

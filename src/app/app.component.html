@@ -1,21 +1,5 @@
+<app-header></app-header>
 
 
-           
-        
-        <h2>{{title}}</h2> 
-        <p>{{pessoa.idade}}<p> 
-        
-        
 
-        
-        <img [src]="imagens.foto" *ngFor= "let imagens of minhaImagem"> >
-
-
-        <p *ngIf="pessoa.idade >= 18">{{pessoa.nome}}</p> 
-        
-        
-     
-        <div class="menul">
-            
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d468546.4150871805!2d-46.93213490149462!3d-23.441741294859533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf26858ed9fc47%3A0x2be9981a0acf2c0!2sBicho%20da%20Rua!5e0!3m2!1spt-BR!2sbr!4v1640037117833!5m2!1spt-BR!2sbr" width="200" height="505" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      
+<router-outlet></router-outlet>

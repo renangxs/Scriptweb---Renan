@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
+  nameButton = "cadastrar"
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  
+  
+  cadastrar(bastao:any){
+  alert(bastao);
+
   }
 
 }

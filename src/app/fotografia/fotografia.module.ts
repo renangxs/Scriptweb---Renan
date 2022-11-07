@@ -1,10 +1,13 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 
 import { FotoComponent } from "./foto/foto.component";
 import { FormularioComponent } from "./formulario/formulario.component";
 import { InicioComponent } from "./inicio/inicio.component";
-import { SharedModule } from "../shared/shared.module";
+
+import { CommonModule } from "@angular/common";
+
 
 
 @NgModule({
@@ -17,7 +20,9 @@ import { SharedModule } from "../shared/shared.module";
 
     
     imports: [
-        BrowserModule,        
+        BrowserModule,
+        CommonModule,
+        FormsModule        
     ],
 
     //Permite que outros modulos ou componentes acessem este grupo

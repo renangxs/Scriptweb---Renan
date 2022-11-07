@@ -1,26 +1,30 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { FormularioComponent } from "./formulario/formulario.component";
 import { FotoComponent } from "./foto/foto.component";
+import { FormularioComponent } from "./formulario/formulario.component";
 import { InicioComponent } from "./inicio/inicio.component";
+import { SharedModule } from "../shared/shared.module";
+
 
 @NgModule({
+    //Determina quais componentes são de responsabilidade do modulo
     declarations: [
         FotoComponent,
-        InicioComponent,
         FormularioComponent,
+        InicioComponent
     ],
 
-    imports: [
-        BrowserModule
-    ],
     
+    imports: [
+        BrowserModule,        
+    ],
+
+    //Permite que outros modulos ou componentes acessem este grupo
     exports: [
         FotoComponent,
-        FormularioComponent,
-        InicioComponent,
+        FormularioComponent
     ]
    
 })
-export class FotografiaModule {}
+export class FotografiaModule{}

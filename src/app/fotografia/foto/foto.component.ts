@@ -1,9 +1,11 @@
 
-
 //Decorar a classe - Utilizar um decorator
 //Decorarator diz a função da classe
 
+import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
+
+import { Fotos } from './foto';
 
 @Component({
     selector: 'app-foto',
@@ -12,31 +14,33 @@ import { Component } from "@angular/core";
 })
 
 export class FotoComponent{
-
+  nameButton = "Fotos Pares";
   titulo = "Minhas Fotos";
-  nameButton = "Fotos Pares"
-control = true;
-
+  control = true;
+  
   //Criar um array de objetos para as fotos
-  imagens = [
-    {img: "https://cdn.pixabay.com/photo/2022/10/07/09/06/bridge-7504605__340.jpg", titulo: "Ponte" },
-    {img: "https://cdn.pixabay.com/photo/2022/10/05/20/43/hyacinth-macaw-7501470__340.jpg", titulo: "Arara"},
-    {img: "https://cdn.pixabay.com/photo/2022/10/15/21/23/cat-7523894__340.jpg", titulo: "Gato"},
-    {img: "https://cdn.pixabay.com/photo/2022/09/24/16/32/bulldog-7476727__340.jpg", titulo: "Elefante"},
-    {img: "https://cdn.pixabay.com/photo/2022/10/16/18/20/flamingos-7525793__340.jpg", titulo: "Flamingo"},
-    {img: "https://cdn.pixabay.com/photo/2022/10/16/18/20/flamingos-7525793__340.jpg", titulo: "Flamingo"}
-  ];
+  imagens: Fotos[] = [];
+
+  //O metodo contrutor de toda classe é carregada junto com o componente
+  //HttpCLient é a ferramenta utilizada para conectar ao banco de dados(json-server(db.json))
+  //Ela tambem permite fazer todo o crud
+  //Injeção de dependencia(HttpCLient) - Que é disponiilizar a ferrammenta denttorro dos () do constru
+  
+  constructor(private joao: HttpClient){
+    //Metodo get() pega algo
+    joao.get<Fotos[]>('http://localhost:3000/fotos').subscribe(caixa => this.imagens = caixa)    
+  }
+
 
   //Método do botao de click
   mudar(){
-    
+
     this.control = !this.control;
-    
-    if(this.nameButton == "Fotos pares"){ 
-    this.nameButton ="Todas Imagens";
-   
+
+    if(this.nameButton == "Todas Imagens" ){
+      this.nameButton = "Fotos Pares"
     }else{
-    this.nameButton ="Fotos pares";
+      this.nameButton = "Todas Imagens";
     }
   }
 }

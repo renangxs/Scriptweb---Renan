@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { FotoComponent } from "./foto/foto.component";
 import { FormularioComponent } from "./formulario/formulario.component";
@@ -22,7 +22,8 @@ import { CommonModule } from "@angular/common";
     imports: [
         BrowserModule,
         CommonModule,
-        FormsModule        
+        FormsModule,
+        ReactiveFormsModule        
     ],
 
     //Permite que outros modulos ou componentes acessem este grupo

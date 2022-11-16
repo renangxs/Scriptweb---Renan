@@ -26,9 +26,9 @@ export class FotoComponent{
   //Ela tambem permite fazer todo o crud
   //Injeção de dependencia(HttpCLient) - Que é disponiilizar a ferrammenta denttorro dos () do constru
   
-  constructor(private joao: HttpClient){
+  constructor(private http: HttpClient){
     //Metodo get() pega algo
-    joao.get<Fotos[]>('http://localhost:3000/fotos').subscribe(caixa => this.imagens = caixa)    
+    http.get<Fotos[]>('http://localhost:3000/fotos').subscribe(caixa => this.imagens = caixa)    
   }
 
 
@@ -42,5 +42,9 @@ export class FotoComponent{
     }else{
       this.nameButton = "Todas Imagens";
     }
+  }
+
+  deletar(id:number){
+    this.http.delete('http://localhost:3000/fotos/' + id).subscribe();
   }
 }

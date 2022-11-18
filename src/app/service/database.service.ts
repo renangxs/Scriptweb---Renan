@@ -7,21 +7,28 @@ import { Fotos } from '../fotografia/foto/foto';
   providedIn: 'root'
 })
 export class DatabaseService {
-
-  readonly API = 'http://localhost:3000/fotos'
   
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type' : 'application/json'})
+  };
+
+  readonly API = 'http://localhost:3000/fotos/'
+  
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
     ) {}
 
 
     getFoto(){
-        this.http.get<Fotos[]>(this.API);
+       return this.http.get<Fotos[]>(this.API);
     }
 
+    postFoto(dados: Fotos){
+      return this.http.post(this.API, JSON.stringify(dados), this.httpOptions).subscribe();
+    }
 
-
-
-
-
+    delFoto(id:number){
+      return this.http.delete(this.API + id).subscribe();
+    }
 }

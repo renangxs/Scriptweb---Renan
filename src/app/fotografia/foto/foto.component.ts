@@ -2,8 +2,8 @@
 //Decorar a classe - Utilizar um decorator
 //Decorarator diz a função da classe
 
-import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
+import { DatabaseService } from "../../service/database.service";
 
 import { Fotos } from './foto';
 
@@ -26,25 +26,16 @@ export class FotoComponent{
   //Ela tambem permite fazer todo o crud
   //Injeção de dependencia(HttpCLient) - Que é disponiilizar a ferrammenta denttorro dos () do constru
   
-  constructor(private http: HttpClient){
-    //Metodo get() pega algo
-    http.get<Fotos[]>('http://localhost:3000/fotos').subscribe(caixa => this.imagens = caixa)    
-  }
+  constructor(private database: DatabaseService){}
 
-
-  //Método do botao de click
-  mudar(){
-
-    this.control = !this.control;
-
-    if(this.nameButton == "Todas Imagens" ){
-      this.nameButton = "Fotos Pares"
-    }else{
-      this.nameButton = "Todas Imagens";
-    }
+  ngOnInit(){
+  this.database.getFoto().subscribe(caixa => this.imagens = caixa);
   }
 
   deletar(id:number){
-    this.http.delete('http://localhost:3000/fotos/' + id).subscribe();
+    this.database.delFoto(id);
   }
+
+
+  mudar(){}
 }

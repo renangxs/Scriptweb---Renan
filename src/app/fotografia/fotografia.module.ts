@@ -8,6 +8,8 @@ import { InicioComponent } from "./inicio/inicio.component";
 
 import { CommonModule } from "@angular/common";
 
+import { AppRoutingModule } from '../app-routing.module';
+
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { CommonModule } from "@angular/common";
     declarations: [
         FotoComponent,
         FormularioComponent,
-        InicioComponent
+        InicioComponent,
+    
     ],
 
     
@@ -23,13 +26,16 @@ import { CommonModule } from "@angular/common";
         BrowserModule,
         CommonModule,
         FormsModule,
-        ReactiveFormsModule        
+        ReactiveFormsModule,
+        AppRoutingModule,
+       
     ],
 
     //Permite que outros modulos ou componentes acessem este grupo
     exports: [
         FotoComponent,
-        FormularioComponent
+        FormularioComponent,
+      
     ]
    
 })

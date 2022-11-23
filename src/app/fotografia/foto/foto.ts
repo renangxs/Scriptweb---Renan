@@ -5,6 +5,10 @@
 export interface Fotos{
     id: number,
     img: string,
-    titulo: string
+    nome: string,
+    raca: string,
+    idade: number,
+    fone: string,
+    cidade: string,
 }
 

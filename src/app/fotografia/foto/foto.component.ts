@@ -3,6 +3,8 @@
 //Decorarator diz a função da classe
 
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { Observable, ObservedValueOf } from "rxjs";
 import { DatabaseService } from "../../service/database.service";
 
 import { Fotos } from './foto';
@@ -15,7 +17,7 @@ import { Fotos } from './foto';
 
 export class FotoComponent{
   nameButton = "Fotos Pares";
-  titulo = "Minhas Fotos";
+  nome = "Minhas Fotos";
   control = true;
   
   //Criar um array de objetos para as fotos
@@ -26,14 +28,24 @@ export class FotoComponent{
   //Ela tambem permite fazer todo o crud
   //Injeção de dependencia(HttpCLient) - Que é disponiilizar a ferrammenta denttorro dos () do constru
   
-  constructor(private database: DatabaseService){}
+  constructor(private database: DatabaseService,
+    private router: Router){}
 
   ngOnInit(){
-  this.database.getFoto().subscribe(caixa => this.imagens = caixa);
+
+    try{
+
+       this.database.getFoto().subscribe(caixa => this.imagens = caixa);
+
+  }catch(error){
+
+    console.log(error);
   }
+}
 
   deletar(id:number){
     this.database.delFoto(id);
+    this.router.navigate(['/fotos'])
   }
 
 

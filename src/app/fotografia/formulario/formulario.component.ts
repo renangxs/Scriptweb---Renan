@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { DatabaseService } from 'src/app/service/database.service';
 
@@ -16,7 +17,8 @@ export class FormularioComponent implements OnInit {
 
   constructor(
     private FormBuilder: FormBuilder, 
-    private database: DatabaseService
+    private database: DatabaseService,
+    private router: Router
     ) {}
 
   ngOnInit(): void {
@@ -27,22 +29,21 @@ export class FormularioComponent implements OnInit {
 
   validaForm(){    this.formulario = this.FormBuilder.group({
     img: ['', [Validators.required, Validators.minLength(5)]],
-    titulo: ['', [Validators.required, Validators.minLength(3)]]
+    nome: ['', [Validators.required, Validators.minLength(3)]],
+    raca: ['', [Validators.required, Validators.minLength(3)]],
+    idade: ['', [Validators.required, Validators.minLength(1)]],
+    fone: ['', [Validators.required, Validators.minLength(3)]],
+    cidade: ['', [Validators.required, Validators.minLength(3)]],
   });
 }
 
 
   cadastro(){
     this.database.postFoto(this.formulario.value);
+    this.router.navigate(['/fotos'])
   }
 
   
   
-  /* cadastrar(bastao:any){
-    alert("dados cadastrados")
-  console.log(bastao.value);
-  
-     
-  } */
 
 }

@@ -1,28 +1,108 @@
 
-<!-- <h1 class="text-center mt-3"> {{ titulo }} </h1> -->
+
+
+<body>
+<div style="background-color: #F0E7E2 ;">
+
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+    
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+         
+      </div>
+  </nav>
+  
+ 
+  <div class=" primary py-5  hero-header" style="background-color: #7AB730; "  >
+    <div class="container py-3"style="margin-top: 5%; " >
+       
+                  
+        <h2 class="display-1  text-dark mb-lg-4 Optima, sans-serif"  style="font-weight: bold" >Conheça nossos Amigos</h2>
+
+        <br>
+
+                <p style="color: rgb(239, 239, 239)" class="fs-4">Para entra em contato com Algum dos donos, nos disponibilizamos o whatsapp dele para que você possa conversar diretamente com ele para saber mais informações sobre cada animal. </p>
+              
+           
+      
+    </div>
+</div>
+  
 
 
 <div class="container mt-5 mb-2 "> 
-  <div class="container mt-5 mb-2 "> 
-    <button class="btn btn-outlet mt-5" (click)="mudar()">{{ nameButton }}</button>
-      <div class="row">
+  <div class="container mt-5 mb-2 " > 
+  
+    
+   
+      <div class="row" >
         
   
       <div class="col col-md-4" *ngFor="let foto of imagens; index as i">
+  
     
+ 
   
         <!--Fotos pares-->
           <div class="card shadow mt-3 text-light bg-dark" style="width: 18rem;" *ngIf="control == true || i%2 == 0">
             <img class="card-img-top" [src]="foto.img" alt="Imagem de capa do card">
             <div class="card-body">
-              <h5 class="card-title text-center">{{ foto.titulo }} index: {{ i }}</h5> 
-            </div>    
-  
+              <h5 class="card-title text-align">Nome:  {{  foto.nome }} </h5> 
+              <h5 class="card-title text-align">Raça:  {{  foto.raca }} </h5> 
+              <h5 class="card-title text-align">Idade:  {{  foto.idade }} </h5> 
+              <h5 class="card-title text-align">Cidade:  {{  foto.cidade }} </h5> 
+              <h5 class="card-title text-align">Tel:  {{  foto.fone }} </h5> 
+              
+            </div>
+
+            <button class="btn  btn-success mb-1 btn-sm" type="button" (click)="deletar(foto.id)" >Editar</button>
+
+            <button class="btn btn-danger btn-sm btn-block" type="button" (click)="deletar(foto.id)">Excluir</button>  
+            
+          
+         
         <!--Fim fotos PAres-->
-          <button type="button" (click)="deletar(foto.id)" class="btn btn-danger btn-sm btn-block">Excluir</button>
+         
         </div>    
       </div>  
     </div>
+  </div>
+</div>
 
 
 
+
+
+
+<br><br><br>
+<br>
+<br>
+  <div class="container-fluid bg-dark text-white-50 py-4">
+      <div class="container">
+          <div class="row g-5">
+              <div class="col-md-6 text-center text-md-start">
+                  <p class="mb-md-0">&copy; <a class="text-white" href="#">Cãopanhia</a>. All Rights Reserved.</p>
+       <br>
+                  <p class="mb-0">Designed by <a class="text-white" href="">Renan Galdina</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Footer End -->
+
+
+ 
+
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+</div>

@@ -45,7 +45,7 @@
     
  
   
-        <!--Fotos pares-->
+      
           <div class="card shadow mt-3 text-light bg-dark" style="width: 18rem;" *ngIf="control == true || i%2 == 0">
             <img class="card-img-top" [src]="foto.img" alt="Imagem de capa do card">
             <div class="card-body">
@@ -57,14 +57,13 @@
               
             </div>
 
-            <button class="btn  btn-success mb-1 btn-sm" type="button" (click)="deletar(foto.id)" >Editar</button>
+            <button class="btn  btn-success mb-1 btn-sm" type="button" [routerLink]="['/formupdate', foto.id]"  >Editar</button>
 
             <button class="btn btn-danger btn-sm btn-block" type="button" (click)="deletar(foto.id)">Excluir</button>  
             
           
          
-        <!--Fim fotos PAres-->
-         
+     
         </div>    
       </div>  
     </div>

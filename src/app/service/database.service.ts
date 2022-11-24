@@ -31,4 +31,8 @@ export class DatabaseService {
     delFoto(id:number){
       return this.http.delete(this.API + id).subscribe();
     }
+
+    updateFoto(dados: Fotos){
+      return this.http.put(this.API + dados.id, JSON.stringify(dados), this.httpOptions).subscribe();
+      }
 }

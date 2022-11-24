@@ -12,7 +12,8 @@ import { SharedModule } from './shared/shared.module';
 
   //Declaration é so pra componetnes
   declarations: [
-    AppComponent,    
+    AppComponent,
+    
   ],
 
   //Imports é so pra modulo

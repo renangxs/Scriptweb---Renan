@@ -9,6 +9,7 @@ import { InicioComponent } from "./inicio/inicio.component";
 import { CommonModule } from "@angular/common";
 
 import { AppRoutingModule } from '../app-routing.module';
+import { FotoformupdateComponent } from "./fotoformupdate/fotoformupdate.component";
 
 
 
@@ -18,6 +19,7 @@ import { AppRoutingModule } from '../app-routing.module';
         FotoComponent,
         FormularioComponent,
         InicioComponent,
+        FotoformupdateComponent,
     
     ],
 
@@ -35,7 +37,7 @@ import { AppRoutingModule } from '../app-routing.module';
     exports: [
         FotoComponent,
         FormularioComponent,
-      
+        FotoformupdateComponent,
     ]
    
 })
